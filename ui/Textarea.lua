@@ -325,7 +325,8 @@ end
 
 function Textarea:draw()
     love.graphics.setStencil(function() love.graphics.rectangle('fill', self.x, self.y, self.w, self.h) end)
-    self:baseDraw()
+    self:basePreDraw()
+    self:basePostDraw()
     love.graphics.setStencil()
 end
 
