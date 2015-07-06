@@ -50,11 +50,11 @@ end
 
 function Frame:draw()
     if self.closed then return end
-    self:baseDraw()
+    self:basePreDraw()
     if self.closeable then self:closeableDraw() end
     self:containerDraw()
+    self:basePostDraw()
 end
-
 function Frame:addElement(element)
     return self:containerAddElement(element)
 end

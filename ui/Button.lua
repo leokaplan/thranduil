@@ -60,7 +60,8 @@ function Button:update(dt, parent)
 end
 
 function Button:draw()
-    self:baseDraw()
+    self:basePreDraw()
+    self:basePostDraw()
 end
 
 function Button:press()

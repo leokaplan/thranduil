@@ -122,10 +122,16 @@ function Base:basePostUpdate(dt)
     self.input:update(dt)
 end
 
-function Base:baseDraw()
+function Base:PreDraw()
     -- Draw extensions
     for _, extension in ipairs(self.extensions or {}) do
         if extension.draw then extension.draw(self) end
+    end
+end
+function Base:PostDraw()
+    -- Draw extensions
+    for _, extension in ipairs(self.extensions or {}) do
+        if extension.overlay then extension.overlay(self) end
     end
 end
 

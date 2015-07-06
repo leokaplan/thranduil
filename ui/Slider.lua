@@ -70,7 +70,8 @@ function Slider:update(dt, parent)
 end
 
 function Slider:draw()
-    self:baseDraw()
+    self:basePreDraw()
+    self:basePostDraw()
 end
 
 function Slider:moveLeft()
